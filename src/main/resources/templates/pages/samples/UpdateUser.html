@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Spica Admin</title>
+
+  <link rel="stylesheet" th:href="@{../../vendors/mdi/css/materialdesignicons.min.css}">
+  <link rel="stylesheet" th:href="@{../../vendors/css/vendor.bundle.base.css}">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" th:href="@{../../css/style.css}">
+  <!-- endinject -->
+  <link rel="shortcut icon" th:href="@{../../images/favicon.png}" />
+</head>
+<body>
+<div class="container-scroller d-flex">
+  <!-- partial:./partials/_sidebar.html -->
+  <div th:replace="~{commons/commons::sidebar}"></div>
+  <!-- partial -->
+  <div class="container-fluid page-body-wrapper">
+    <div class="table-responsive">
+
+      <form th:action="@{/updateUser}" method="post">
+        <input type="hidden" th:value="${userInfo.getId()}" name="id">
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" th:value="${userInfo.getUsername()}" name="username" class="form-control" placeholder="Username">
+        </div>
+        <div class="form-group">
+          <label>password</label>
+          <input type="text" th:value="${userInfo.getPassword()}"name="password" class="form-control" placeholder="password">
+        </div>
+        <div class="form-group">
+          <label>email</label>
+          <input type="email" th:value="${userInfo.getEmail()}"name="email" class="form-control" placeholder="222@163.com">
+        </div>
+        <div class="form-group">
+          <label>country</label>
+          <input type="text" th:value="${userInfo.getCountry()}"name="country" class="form-control" placeholder="China">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+    </div>
+  </div>
+  <!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+
+<!-- base:js -->
+<script src="../../vendors/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page-->
+<script src="../../vendors/chart.js/Chart.min.js"></script>
+<!-- End plugin js for this page-->
+<!-- inject:js -->
+<script src="../../js/off-canvas.js"></script>
+<script src="../../js/hoverable-collapse.js"></script>
+<script src="../../js/template.js"></script>
+<!-- endinject -->
+<!-- plugin js for this page -->
+<!-- End plugin js for this page -->
+<!-- Custom js for this page-->
+<script src="../../js/dashboard.js"></script>
+<!-- End custom js for this page-->
+</body>
+</html>
+
